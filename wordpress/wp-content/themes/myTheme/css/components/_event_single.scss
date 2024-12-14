@@ -1,0 +1,117 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.event-banner-single {
+  @include mix.banner;
+  @include mix.tablet-styles {
+    height: auto;
+    padding: var.$gutter-base;
+  }
+  .content {
+    @include mix.tablet-styles {
+      margin: 0;
+      width: auto;
+    }
+  }
+  .mobile-none + p {
+    @include mix.tablet-styles {
+      display: none;
+    }
+  }
+}
+.events-carusel {
+  .inner {
+    padding: 0 200px;
+    color: var.$text-color-primary;
+
+    @include mix.tablet-styles {
+      padding: 0 50px;
+      text-align: center;
+    }
+  }
+  img {
+    width: 350px;
+    border-radius: 15px;
+    margin: 0 auto;
+    @include mix.tablet-styles {
+      margin-bottom: 15px;
+    }
+  }
+  .testimonial-name {
+    color: var.$background-color-secondary;
+    font-weight: 500;
+    margin-top: 15px;
+  }
+}
+#testimonialCarousel {
+  .carousel-inner {
+    border: none !important;
+  }
+}
+/* Top Brands Section Styling */
+.top-brands-section {
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.top-brands-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px; /* Space between logos */
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px; /* Fixed height */
+  max-width: 150px; /* Adjust as needed */
+}
+
+.brand-logo img {
+  max-height: 100%;
+
+  /* Ensures the image maintains aspect ratio */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.brand-logo img:hover {
+  transform: scale(1.05);
+  opacity: 0.8;
+}
+
+/* Responsive Adjustments */
+
+.top-brands-logos {
+  @include mix.tablet-styles {
+    gap: 10px;
+  }
+}
+
+.brand-logo {
+  @include mix.tablet-styles {
+    max-width: 100px;
+  }
+}
+
+.event-section-mobile {
+  h3 {
+    color: var.$text-color-secondary;
+    font-size: 2rem;
+  }
+  background-color: var.$background-color-secondary;
+  border-radius: 15px;
+  padding: var.$gutter-base * 2 var.$gutter-base;
+  color: var.$text-color-secondary;
+  a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+  @include mix.tablet-styles {
+    margin-bottom: 15px;
+  }
+}

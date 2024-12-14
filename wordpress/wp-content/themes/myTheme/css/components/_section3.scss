@@ -1,0 +1,20 @@
+@use "../abstracts/variables" as var;
+
+.section3 {
+  .row {
+    .col-4 {
+      height: inherit;
+    }
+  }
+}
+.section3 .card {
+  background-color: var.$background-color-secondary;
+  color: var.$text-color-secondary;
+  height: 100%;
+}
+
+.section3 .card h5 {
+  margin-top: var.$gutter-base;
+  font-size: var.$gutter-base * 1.5;
+  font-weight: bold;
+}

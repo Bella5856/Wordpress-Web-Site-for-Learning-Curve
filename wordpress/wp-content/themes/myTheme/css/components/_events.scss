@@ -1,0 +1,73 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+.event-day {
+  font-size: 3.5rem;
+}
+.event-month {
+  font-size: 2rem;
+}
+.conference-banner {
+  background-size: cover !important;
+  background-position: center !important;
+  @include mix.tablet-styles {
+    width: 100% !important;
+  }
+}
+.event-card {
+  padding: 30px;
+}
+.event-banner {
+  @include mix.banner;
+  border-radius: 25px;
+  background-image: linear-gradient(
+      270deg,
+      rgba(238, 247, 255, 0.001) 0%,
+      rgba(145, 173, 244, 0.405) 50%,
+      rgba(34, 54, 110, 0.803) 80%
+    ),
+    url("../Images/about\ banner.png");
+
+  .content {
+    background-color: var.$text-color-secondary;
+    color: var.$text-color-primary;
+    border-radius: 15px;
+    padding: 25px;
+    margin-left: var.$gutter-base * 3;
+    h3 {
+      font-size: 2rem;
+      font-weight: 600;
+    }
+    p {
+      margin-bottom: var.$gutter-base;
+    }
+    button {
+      border: none;
+      border-radius: 15px;
+      padding: 8px 32px;
+      font-weight: 500;
+      background-color: var.$background-color-secondary;
+      color: var.$text-color-secondary;
+    }
+    button:hover {
+      background-color: var.$background-color-hover;
+    }
+  }
+}
+
+.conference-mobile .container {
+  .content {
+    @include mix.tablet-styles {
+      width: 75% !important;
+      margin-left: 0 !important;
+      margin: 0 auto !important;
+    }
+  }
+  @include mix.tablet-styles {
+    max-width: 100% !important;
+  }
+}
+.blog-wrapper {
+  @include mix.tablet-styles {
+    display: none;
+  }
+}

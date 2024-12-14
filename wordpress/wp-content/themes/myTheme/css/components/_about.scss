@@ -1,0 +1,92 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+.about-banner {
+  h2 {
+    color: var.$text-color-secondary;
+  }
+  @include mix.banner;
+  @include mix.tablet-styles {
+    height: 350px;
+  }
+  background-image: linear-gradient(
+      270deg,
+      rgba(238, 247, 255, 0.001) 0%,
+      rgba(145, 173, 244, 0.405) 50%,
+      rgba(34, 54, 110, 0.803) 80%
+    ),
+    url("../Images/about\ banner.png");
+
+  color: var.$text-color-secondary;
+  border-radius: 18px;
+
+  h2 {
+    font-size: 4rem;
+    font-weight: 800;
+    @include mix.tablet-styles {
+      font-size: 3rem;
+    }
+  }
+  .content {
+    margin-left: var.$gutter-base * 3;
+    @include mix.tablet-styles {
+      margin-left: var.$gutter-base;
+      width: 80%;
+    }
+  }
+  p {
+    margin-bottom: var.$gutter-base;
+  }
+  button {
+    background-color: var.$text-color-secondary;
+    color: var.$text-color-primary;
+    padding: 8px 32px;
+    border: none;
+    border-radius: 15px;
+    font-weight: 500;
+  }
+  button:hover {
+    background-color: var.$text-color-secondary-transperent;
+  }
+}
+
+.comunity-banner {
+  @include mix.banner;
+
+  background-image: linear-gradient(
+      270deg,
+      rgba(238, 247, 255, 0.001) 0%,
+      rgba(145, 173, 244, 0.405) 50%,
+      rgba(34, 54, 110, 0.803) 80%
+    ),
+    url("../Images/about\ banner.png");
+
+  .content {
+    background-color: var.$text-color-secondary;
+    color: var.$text-color-primary;
+    border-radius: 15px;
+    padding: 25px;
+    margin-left: var.$gutter-base * 3;
+    @include mix.tablet-styles {
+      margin-left: 0;
+      margin: 0 auto;
+    }
+    h3 {
+      font-size: 3rem;
+      font-weight: 600;
+    }
+    p {
+      margin-bottom: var.$gutter-base;
+    }
+    button {
+      border: none;
+      border-radius: 15px;
+      padding: 8px 32px;
+      font-weight: 500;
+      background-color: var.$background-color-secondary;
+      color: var.$text-color-secondary;
+    }
+    button:hover {
+      background-color: var.$background-color-hover;
+    }
+  }
+}

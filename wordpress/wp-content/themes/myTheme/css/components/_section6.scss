@@ -1,0 +1,16 @@
+@use "../abstracts/variables" as var;
+
+.section6 {
+  width: 60%;
+
+  .accordion-button {
+    border-bottom: 2px solid var.$text-color-primary;
+    background-color: var.$background-color-base;
+    font-size: 1rem;
+    font-weight: bold;
+    color: var.$background-color-secondary;
+  }
+  .accordion-item:first-child .accordion-button {
+    border-top: 2px solid var.$text-color-primary;
+  }
+}

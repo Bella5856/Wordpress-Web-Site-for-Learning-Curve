@@ -1,0 +1,42 @@
+/* Toggle Buttons Styling */
+.account-toggle-buttons {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.account-toggle-buttons button {
+  padding: 10px 20px;
+  margin: 0 5px;
+  border: none;
+  background-color: #f1f1f1;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.account-toggle-buttons button.active {
+  background-color: #007cba;
+  color: #fff;
+}
+.woocommerce .col-2,
+.woocommerce .col-1 {
+  max-width: 80% !important;
+  width: 80% !important;
+  margin: 0 auto;
+  float: none !important;
+}
+/* Hide the Register Form Initially */
+.u-column2.col-2,
+.u-column1.col-1 {
+  display: none;
+  max-width: 80% !important;
+}
+
+/* Optional: Smooth Transition for Forms */
+.u-columns.col2-set .u-column1.col-1,
+.u-columns.col2-set .u-column2.col-2 {
+  transition: all 0.5s ease-in-out;
+  width: 80% !important;
+  margin: 0 auto !important;
+}

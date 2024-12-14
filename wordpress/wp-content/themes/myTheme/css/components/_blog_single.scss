@@ -1,0 +1,42 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.blog-post-banner {
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  @include mix.tablet-styles {
+    height: 50vh;
+  }
+}
+.blog-content-section {
+  width: 70%;
+  @include mix.tablet-styles {
+    width: 85%;
+    padding: var.$gutter-base;
+  }
+  margin: 0 auto;
+  border: 1px solid var.$background-color-secondary;
+  border-radius: 15px;
+  padding: var.$gutter-base * 3;
+  margin-top: var.$gutter-base * -7;
+  background-color: var.$background-color-base;
+  h1 {
+    text-align: center;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    color: var.$background-color-secondary;
+
+    font-weight: 700;
+    margin-bottom: var.$gutter-base;
+  }
+}
+.align-margin {
+  margin-left: -25px !important;
+  margin-right: -25px !important;
+}

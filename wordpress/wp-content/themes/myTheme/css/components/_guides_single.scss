@@ -1,0 +1,157 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.guides-banner {
+  @include mix.banner;
+  background-color: var.$background-color-secondary;
+  color: white;
+  h2 {
+    color: white;
+    font-size: 4rem;
+  }
+}
+.guides-form {
+  input {
+    display: block;
+    width: 100%;
+    padding: 15px;
+    border-radius: 20px;
+    border: none;
+    background-color: #d9d9d9;
+  }
+  .form-group.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+    margin-left: 5px;
+    position: relative; /* Establish positioning context */
+  }
+
+  .form-group .checkbox-group {
+    position: relative;
+    padding: 10px;
+    font-size: 18px;
+    user-select: none;
+  }
+
+  .checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+
+  /* Style the label */
+  .checkbox + label {
+    position: relative;
+    padding-left: 35px; /* Space for the custom checkbox */
+    cursor: pointer;
+    user-select: none;
+    display: flex;
+    align-items: center;
+  }
+
+  /* Create the custom checkbox box using ::before */
+  .checkbox + label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Center vertically within the label */
+    width: 25px;
+    height: 25px;
+    background-color: #d9d9d9;
+    border: none;
+    border-radius: 4px;
+    display: flex; /* Make it a flex container */
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+  }
+
+  /* Display the checkmark when checked */
+  .checkbox:checked + label::before {
+    background-color: #4caf50; /* Green */
+    content: "\2713"; /* Unicode character for checkmark */
+    color: white;
+    font-size: 20px;
+  }
+
+  .red-submit-btn {
+    background-color: var.$color-pink;
+    padding: 18px 36px;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    font-weight: 700;
+    width: 100%;
+  }
+  .red-submit-btn:hover {
+    background-color: var.$btn-color3;
+  }
+}
+.learning-points-section h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333333;
+}
+
+/* Background Color Classes */
+.bg-grey {
+  background-color: var.$btn-color1-hover-transperent;
+}
+
+.bg-light-blue {
+  background-color: var.$btn-color4-hover-transperent;
+}
+
+.bg-pink {
+  background-color: var.$color-pink-light;
+}
+
+/* Learning Point Card Styling */
+.learning-point-card {
+  border: none; /* Remove default card border */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.learning-point-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Adjustments for Image and Text Alignment */
+.learning-point-card .card-body {
+  padding: 30px;
+}
+.learning-point-card .learning-point-image {
+  margin-right: 15px;
+}
+
+.learning-point-card .learning-point-content {
+  flex: 1;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .learning-point-card .card-body {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .learning-point-card .learning-point-image {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+
+  .learning-point-card .learning-point-image img {
+    width: 100%;
+    max-width: 150px;
+  }
+
+  .learning-point-card .learning-point-content {
+    text-align: center;
+  }
+}

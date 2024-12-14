@@ -1,0 +1,67 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/mixins" as mix;
+
+.conference-banner-single {
+  h3,
+  h2 {
+    color: var.$text-color-secondary;
+  }
+  color: var.$text-color-secondary;
+  @include mix.banner;
+}
+/* Conference Subjects Carousel Styling */
+/* Conference Subjects Carousel Styling */
+.conference-subjects {
+  margin: 2em 0;
+}
+
+#subjects-carousel {
+  background-color: var.$background-color-base-secondary; /* Light blue background */
+  border-radius: var.$gutter-base;
+}
+
+#subjects-carousel .carousel-item {
+  text-align: center;
+  color: var.$background-color-secondary; /* Dark text for readability */
+}
+
+#subjects-carousel h3 {
+  color: var.$background-color-secondary; /* Dark text color */
+  font-size: 1.5em;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  /* Darker color for navigation arrows */
+  border-radius: 50%;
+}
+
+.carousel-item.active {
+  display: block;
+}
+
+.carousel-inner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: var.$gutter-base;
+  border: 1px solid var.$background-color-secondary !important;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  filter: invert(100%); /* Make controls visible */
+  border-radius: 25px;
+}
+
+/* Override any existing styles */
+.carousel-item {
+  background-color: transparent !important;
+  border-radius: var.$gutter-base;
+  outline: none !important;
+  border: none !important;
+}
+
+.subject-item {
+  padding: var.$gutter-base * 3;
+}

@@ -1,0 +1,43 @@
+@use "sass:math";
+
+@function rem-calc($size) {
+  @return (math.div($size, 16)) * 1rem;
+}
+
+// Font settings
+$font-family-base: "Inter", sans-serif;
+$font-family-montserat: "Montserrat", sans-serif;
+$line-height-base: 1.5;
+
+$font-weight-normal: 400;
+$font-weight-bold: 700;
+
+// Size settings
+$gutter-base: rem-calc(30);
+
+// Color settings
+
+$text-color-primary: #000000;
+$text-color-secondary: white;
+$text-color-secondary-transperent: rgba(255, 255, 255, 0.752);
+$background-color-base: #fafafa;
+$background-color-base-secondary: rgba(80, 123, 248, 0.06);
+$background-color-secondary: #22366e;
+$Text-color-heading: #22366e;
+$background-color-hover: #22366eda;
+$color-highlight: #a8de98;
+$button-color: #507bf8;
+$btn-color1: #3d5888;
+$btn-color1-hover: #3d5888da;
+$btn-color1-hover-transperent: #3d588847;
+$btn-color2: #ee8d49;
+$btn-color2-hover: #ee8e49ca;
+$btn-color2-hover-transperent: #ee8e4951;
+$btn-color3: #d67676;
+$btn-color3-hover: #d67676da;
+$btn-color3-hover-transperent: #d676763e;
+$btn-color4: #58a798;
+$btn-color4-hover: #58a799e1;
+$btn-color4-hover-transperent: #58a7992b;
+$color-pink: #dd7a76;
+$color-pink-light: #f7d3b7;
